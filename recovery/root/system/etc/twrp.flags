@@ -1,0 +1,38 @@
+# <mount_point>           <fstype>  <primary_device>   <alternate_device>            <flags>
+
+# User writeable partitions
+/boot                     emmc      /dev/block/by-name/boot                          flags=display=boot;slotselect
+/vbmeta                   emmc      /dev/block/by-name/vbmeta                        flags=display=vbmeta
+/vendor_boot              emmc      /dev/block/by-name/vendor_boot                   flags=display=vendor_boot
+
+# Firmware
+/dtbo                     emmc      /dev/block/by-name/dtbo                          flags=display=dtbo
+/metadata                 ext4      /dev/block/by-name/metadata                      flags=display=metadata
+/misc                     emmc      /dev/block/by-name/misc                          flags=display=misc
+/vbmeta_system            emmc      /dev/block/by-name/vbmeta_system                 flags=display=vbmeta_system;slotselect
+/vbmeta_vendor            emmc      /dev/block/by-name/vbmeta_vendor                 flags=display=vbmeta_vendor;slotselect
+
+# Sensitive Data
+/mnt/vendor/nvcfg         ext4      /dev/block/by-name/nvcfg                         flags=display=nvcfg
+/mnt/vendor/persist       ext4      /dev/block/by-name/persist                       flags=display=persist
+/persistent               emmc      /dev/block/by-name/frp                           flags=display=persistent
+
+# IMEI and modem related
+/mnt/vendor/nvdata        ext4      /dev/block/by-name/nvdata                        flags=display=nvdata
+/mnt/vendor/protect_f     ext4      /dev/block/by-name/protect1                      flags=display=protect_f
+/mnt/vendor/protect_s     ext4      /dev/block/by-name/protect2                      flags=display=protect_s
+/nvram                    emmc      /dev/block/by-name/nvram                         flags=display=nvram
+
+# Standard MediaTeks's Partitions
+/expdb                    emmc      /dev/block/by-name/expdb                         flags=display=expdb
+/logo                     emmc      /dev/block/by-name/logo                          flags=display=logo
+/otp                      emmc      /dev/block/by-name/otp                           flags=display=otp
+/seccfg                   emmc      /dev/block/by-name/seccfg                        flags=display=seccfg
+/spmfw                    emmc      /dev/block/by-name/spmfw                         flags=display=spmfw
+/tee1                     emmc      /dev/block/by-name/tee1                          flags=display=tee1
+/tee2                     emmc      /dev/block/by-name/tee2                          flags=display=tee2
+/tranfs                   ext4      /dev/block/by-name/tranfs                        flags=display=tranfs
+
+# Removable storage
+/external_sd              auto      /dev/block/mmcblk0p1   /dev/block/mmcblk0        flags=display="Micro SD";storage;wipeingui;removable
+/usb-otg                  auto      /dev/block/sda1   /dev/block/sdd                 flags=display-"USB OTG"storage;wipeingui;removable
