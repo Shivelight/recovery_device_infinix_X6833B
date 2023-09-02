@@ -1,0 +1,12 @@
+<!--Transsion Top Secret-->
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.transsion.hardware.transtorage.storage</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IStorage</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>
