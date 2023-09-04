@@ -1,6 +1,8 @@
-import /init.recovery.project.rc
+import /tee.rc
+import /trustonic.rc
 
 on init
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "musb-hdrc"
     setprop sys.usb.ffs.aio_compat 0
@@ -13,3 +15,42 @@ on fs && property:ro.debuggable=0
 
 on boot
     exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
+on fs
+    install_keyring
+
+service keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:hwservicemanager.ready=true
+    start mobicore
+    start keymint-trustonic
+    start keymaster_attestation-1-1
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+    stop mobicore
+    stop keymint-trustonic
+    stop keymaster_attestation-1-1
+    stop gatekeeper-1-0
+    
+on property:ro.crypto.state=unencrypted
+    stop mobicore
+    stop keymint-trustonic
+    stop keymaster_attestation-1-1
+    stop gatekeeper-1-0
+
+on property:twrp.all.users.decrypted=true
+    stop mobicore
+    stop keymint-trustonic
+    stop keymaster_attestation-1-1
+    stop gatekeeper-1-0
