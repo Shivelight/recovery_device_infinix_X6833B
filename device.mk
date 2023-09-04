@@ -35,3 +35,16 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-mtkimpl \
+    android.hardware.boot@1.2-mtkimpl.recovery
+
+PRODUCT_PACKAGES += \
+    bootctrl \
+    bootctrl.recovery \
+    libmtk_bsg
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctrl
