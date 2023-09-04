@@ -1,5 +1,6 @@
 import /tee.rc
 import /trustonic.rc
+import /mtk-plpath-utils.rc
 
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
