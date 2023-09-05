@@ -10,6 +10,10 @@ DEVICE_PATH := device/infinix/X6833B
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+# Relax ELF prebuilts in PRODUCT_COPY_FILES rule
+# https://android.googlesource.com/platform/build/+/refs/heads/main/Changes.md#elf-prebuilts-in-build_broken_elf_prebuilt_product_copy_files
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
