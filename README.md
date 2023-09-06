@@ -1,44 +1,35 @@
 # Android device tree for Infinix Note 30 (X6833B)
 
 Blocking checks
-- [ ] Correct screen/recovery size
-- [ ] Working Touch, screen
-- [ ] Backup to internal/microSD
-- [ ] Restore from internal/microSD
-- [ ] reboot to system
-- [ ] ADB
+- [x] Correct screen/recovery size
+- [x] Working Touch, screen
+- [x] Backup to internal/microSD
+- [x] Restore from internal/microSD
+- [x] reboot to system
+- [x] ADB
 
 Medium checks
 - [ ] update.zip sideload
 - [ ] UI colors (red/blue inversions)
-- [ ] Screen goes off and on
-- [ ] F2FS/EXT4 Support, exFAT/NTFS where supported
+- [x] Screen goes off and on
+- [x] F2FS/EXT4 Support, exFAT/NTFS where supported
 - [ ] all important partitions listed in mount/backup lists
-- [ ] backup/restore to/from external (USB-OTG) storage (not supported by the device)
+- [x] backup/restore to/from external (USB-OTG) storage
 - [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
-- [ ] decrypt /data
-- [ ] Correct date
+- [x] decrypt /data
+- [x] Correct date
 
 Minor checks
 - [ ] MTP export
-- [ ] reboot to bootloader
-- [ ] reboot to recovery
-- [ ] poweroff
-- [ ] battery level
-- [ ] temperature
+- [x] reboot to bootloader
+- [x] reboot to recovery
+- [x] poweroff
+- [x] battery level
+- [x] temperature
 - [ ] encrypted backups
-- [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device)
+- [x] input devices via USB (USB-OTG) - keyboard, mouse and disks
 - [ ] USB mass storage export
-- [ ] set brightness
+- [x] set brightness
 - [ ] vibrate
-- [ ] screenshot
+- [x] screenshot
 - [ ] partition SD card
-
-```
-#
-# Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-```
