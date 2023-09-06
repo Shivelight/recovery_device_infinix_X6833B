@@ -137,6 +137,7 @@ TW_HAS_NO_RECOVERY_PARTITION := true
 TW_NO_FLASH_CURRENT_TWRP := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_DEFAULT_BRIGHTNESS := 2047
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone28/temp
 TW_CUSTOM_CPU_POS := 290
 TW_CUSTOM_CLOCK_POS := 40
