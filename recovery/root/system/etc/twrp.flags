@@ -2,15 +2,15 @@
 
 # User writeable partitions
 /boot                     emmc      /dev/block/by-name/boot                          flags=display=boot;slotselect;backup;flashimg
-/vbmeta                   emmc      /dev/block/by-name/vbmeta                        flags=display=vbmeta;slotselect;backup;flashimg
 /vendor_boot              emmc      /dev/block/by-name/vendor_boot                   flags=display=vendor_boot;slotselect;backup;flashimg
+/vbmeta                   emmc      /dev/block/by-name/vbmeta                        flags=display=vbmeta;slotselect;backup;flashimg
+/vbmeta_system            emmc      /dev/block/by-name/vbmeta_system                 flags=display=vbmeta_system;slotselect;backup;flashimg
+/vbmeta_vendor            emmc      /dev/block/by-name/vbmeta_vendor                 flags=display=vbmeta_vendor;slotselect;backup;flashimg
 
 # Firmware
 /dtbo                     emmc      /dev/block/by-name/dtbo                          flags=display=dtbo;slotselect;backup
 /metadata                 ext4      /dev/block/by-name/metadata                      flags=display=metadata;backup
 /misc                     emmc      /dev/block/by-name/misc                          flags=display=misc;backup
-/vbmeta_system            emmc      /dev/block/by-name/vbmeta_system                 flags=display=vbmeta_system;slotselect
-/vbmeta_vendor            emmc      /dev/block/by-name/vbmeta_vendor                 flags=display=vbmeta_vendor;slotselect
 
 # Sensitive Data
 /nvcfg                    ext4      /dev/block/by-name/nvcfg                         flags=display=nvcfg;backup

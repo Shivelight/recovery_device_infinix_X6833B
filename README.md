@@ -9,13 +9,13 @@ Blocking checks
 - [x] ADB
 
 Medium checks
-- [ ] update.zip sideload
+- [x] update.zip sideload
 - [ ] UI colors (red/blue inversions)
 - [x] Screen goes off and on
 - [x] F2FS/EXT4 Support, exFAT/NTFS where supported
-- [ ] all important partitions listed in mount/backup lists
+- [x] all important partitions listed in mount/backup lists
 - [x] backup/restore to/from external (USB-OTG) storage
-- [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
+- [x] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
 - [x] decrypt /data
 - [x] Correct date
 
