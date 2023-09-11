@@ -10,6 +10,8 @@ on boot
 
 on fs
     install_keyring
+    wait /dev/block/platform/soc/11270000.ufshci
+    symlink /dev/block/platform/soc/11270000.ufshci /dev/block/bootdevice
 
 service keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
     user root

@@ -15,7 +15,7 @@
 # Sensitive Data
 /nvcfg                    ext4      /dev/block/by-name/nvcfg                         flags=display=nvcfg;backup
 /persist                  ext4      /dev/block/by-name/persist                       flags=display=persist;fsflags=ro
-/persist_image            emmc      /dev/block/by-name/persist                       flags=display=persist;backup=1
+/persist_image            emmc      /dev/block/by-name/persist                       flags=display=persist;backup
 /persistent               emmc      /dev/block/by-name/frp                           flags=display=persistent;backup
 
 # IMEI and modem related
@@ -37,3 +37,9 @@
 # Removable storage
 /external_sd              auto      /dev/block/mmcblk0p1   /dev/block/mmcblk0        flags=display="Micro SD";storage;wipeingui;removable
 /usb-otg                  auto      /dev/block/sdd1   /dev/block/sdd                 flags=display="USB OTG";storage;wipeingui;removable
+
+# Flashable logical partitions
+/system_image             emmc      /dev/block/bootdevice/by-name/system             flags=backup;flashimg
+/vendor_image             emmc      /dev/block/bootdevice/by-name/vendor             flags=backup;flashimg
+/system_ext_image         emmc      /dev/block/bootdevice/by-name/system_ext         flags=display="System_EXT Image";backup;flashimg
+/product_image            emmc      /dev/block/bootdevice/by-name/product            flags=display="Product Image";backup;flashimg
