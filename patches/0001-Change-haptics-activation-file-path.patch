@@ -1,0 +1,34 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Shivelight <shivelight@tuta.io>
+Date: Wed, 13 Sep 2023 08:06:19 +0700
+Subject: [PATCH] Change haptics activation file path
+
+Infinix or perhaps AWINIC Haptic Driver (aw862xx_haptic.ko) is using
+`/sys/class/leds/vibrator_single` instead of `/sys/class/leds/vibrator`.
+
+This is temporary until TWRP allows custom haptics file path
+https://github.com/TeamWin/android_bootable_recovery/issues/321
+
+Change-Id: I8b06ac64a1c7f2bb79a1295c505950afbf46a3d2
+---
+ minuitwrp/events.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/minuitwrp/events.cpp b/minuitwrp/events.cpp
+index b5e5a14..c5b7dc3 100644
+--- a/minuitwrp/events.cpp
++++ b/minuitwrp/events.cpp
+@@ -60,8 +60,8 @@ static std::atomic_int vib_on_count = 0;
+ #define VIBRATOR_TIMEOUT_FILE	"/sys/class/timed_output/vibrator/enable"
+ #define VIBRATOR_TIME_MS    50
+ 
+-#define LEDS_HAPTICS_DURATION_FILE	"/sys/class/leds/vibrator/duration"
+-#define LEDS_HAPTICS_ACTIVATE_FILE	"/sys/class/leds/vibrator/activate"
++#define LEDS_HAPTICS_DURATION_FILE	"/sys/class/leds/vibrator_single/duration"
++#define LEDS_HAPTICS_ACTIVATE_FILE	"/sys/class/leds/vibrator_single/activate"
+ 
+ #ifndef SYN_REPORT
+ #define SYN_REPORT          0x00
+-- 
+2.39.2
+
