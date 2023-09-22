@@ -142,6 +142,7 @@ TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TARGET_USES_MKE2FS := true
+TW_FRAMERATE := 60
 
 # Tools
 TW_INCLUDE_FUSE_EXFAT := true
