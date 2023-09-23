@@ -13,13 +13,13 @@ on fs
     wait /dev/block/platform/soc/11270000.ufshci
     symlink /dev/block/platform/soc/11270000.ufshci /dev/block/bootdevice
 
-service keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
+service keymint-trustonic /system/bin/hw/android.hardware.security.keymint-service.trustonic
     user root
     group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service
     interface android.hardware.gatekeeper@1.0::IGatekeeper default
     user root
     group root
