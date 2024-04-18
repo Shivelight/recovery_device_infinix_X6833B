@@ -81,5 +81,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: twrp_X6833B
+        name: X6833B
         path: workspace/out/target/product/X6833B/vendor_boot.img
